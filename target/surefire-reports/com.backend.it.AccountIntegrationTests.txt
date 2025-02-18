@@ -1,0 +1,16 @@
+-------------------------------------------------------------------------------
+Test set: com.backend.it.AccountIntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 3, Failures: 0, Errors: 3, Skipped: 0, Time elapsed: 9.955 s <<< FAILURE! - in com.backend.it.AccountIntegrationTests
+testSaveAccount  Time elapsed: 0.939 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.length()" because the return value of "org.springframework.http.ResponseEntity.getBody()" is null
+	at com.backend.it.AccountIntegrationTests.setUp(AccountIntegrationTests.java:66)
+
+testUpdateAccount  Time elapsed: 0.134 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.length()" because the return value of "org.springframework.http.ResponseEntity.getBody()" is null
+	at com.backend.it.AccountIntegrationTests.setUp(AccountIntegrationTests.java:66)
+
+testGetAccounts  Time elapsed: 0.138 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.length()" because the return value of "org.springframework.http.ResponseEntity.getBody()" is null
+	at com.backend.it.AccountIntegrationTests.setUp(AccountIntegrationTests.java:66)
+

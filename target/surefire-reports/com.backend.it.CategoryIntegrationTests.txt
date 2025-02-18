@@ -1,0 +1,12 @@
+-------------------------------------------------------------------------------
+Test set: com.backend.it.CategoryIntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 2, Failures: 0, Errors: 2, Skipped: 0, Time elapsed: 0.257 s <<< FAILURE! - in com.backend.it.CategoryIntegrationTests
+testAddCategory  Time elapsed: 0.118 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.length()" because the return value of "org.springframework.http.ResponseEntity.getBody()" is null
+	at com.backend.it.CategoryIntegrationTests.setUp(CategoryIntegrationTests.java:63)
+
+testGetAllCategories  Time elapsed: 0.136 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.length()" because the return value of "org.springframework.http.ResponseEntity.getBody()" is null
+	at com.backend.it.CategoryIntegrationTests.setUp(CategoryIntegrationTests.java:63)
+

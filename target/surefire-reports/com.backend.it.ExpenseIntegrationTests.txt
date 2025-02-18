@@ -1,0 +1,24 @@
+-------------------------------------------------------------------------------
+Test set: com.backend.it.ExpenseIntegrationTests
+-------------------------------------------------------------------------------
+Tests run: 5, Failures: 0, Errors: 5, Skipped: 0, Time elapsed: 0.376 s <<< FAILURE! - in com.backend.it.ExpenseIntegrationTests
+testUpdateExpense  Time elapsed: 0.073 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.length()" because the return value of "org.springframework.http.ResponseEntity.getBody()" is null
+	at com.backend.it.ExpenseIntegrationTests.setUp(ExpenseIntegrationTests.java:58)
+
+testAddExpense  Time elapsed: 0.074 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.length()" because the return value of "org.springframework.http.ResponseEntity.getBody()" is null
+	at com.backend.it.ExpenseIntegrationTests.setUp(ExpenseIntegrationTests.java:58)
+
+testDeleteExpense  Time elapsed: 0.073 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.length()" because the return value of "org.springframework.http.ResponseEntity.getBody()" is null
+	at com.backend.it.ExpenseIntegrationTests.setUp(ExpenseIntegrationTests.java:58)
+
+testGetAllExpenses  Time elapsed: 0.073 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.length()" because the return value of "org.springframework.http.ResponseEntity.getBody()" is null
+	at com.backend.it.ExpenseIntegrationTests.setUp(ExpenseIntegrationTests.java:58)
+
+testGetExpenseByID  Time elapsed: 0.074 s  <<< ERROR!
+java.lang.NullPointerException: Cannot invoke "String.length()" because the return value of "org.springframework.http.ResponseEntity.getBody()" is null
+	at com.backend.it.ExpenseIntegrationTests.setUp(ExpenseIntegrationTests.java:58)
+
