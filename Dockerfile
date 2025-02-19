@@ -1,14 +1,36 @@
-# Use the official OpenJDK 17 image
-FROM openjdk:17-jdk-slim
+# Use an official OpenJDK runtime as a parent image
+FROM openjdk:17-jdk-slim AS build
 
-# Set the working directory inside the container
+# Set the working directory in the container
 WORKDIR /app
 
-# Copy the JAR file from the target directory to the container
-COPY target/*.jar app.jar
+# Copy Maven wrapper and pom.xml
+COPY mvnw mvnw.cmd pom.xml ./
+COPY .mvn .mvn
 
-# Expose the application port (Render assigns it dynamically)
+# Give execute permission to Maven wrapper
+RUN chmod +x mvnw
+
+# Download dependencies (improves build speed on future runs)
+RUN ./mvnw dependency:go-offline
+
+# Copy the project source code
+COPY src src
+
+# Build the application
+RUN ./mvnw package -DskipTests
+
+# Second stage - runtime container
+FROM openjdk:17-jdk-slim
+
+# Set the working directory
+WORKDIR /app
+
+# Copy the built JAR from the previous stage
+COPY --from=build /app/target/*.jar app.jar
+
+# Expose the application port
 EXPOSE 8080
 
 # Run the application
-CMD ["java", "-jar", "app.jar"]
+ENTRYPOINT ["java", "-jar", "app.jar"]
